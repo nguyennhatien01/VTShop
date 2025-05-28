@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sản phẩm - Admin</title>
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<header>
+    <h1>Quản lý sản phẩm</h1>
+    <nav>
+        <a href="web.html">Trang chủ</a>
+    </nav>
+    
+</header>
+<main>
+    <form id="add-product-form">
+        <input type="text" id="name" placeholder="Tên sản phẩm" required>
+        <input type="number" id="price" placeholder="Giá" required>
+        <input type="number" id="stock" placeholder="Tồn kho" required>
+        <input type="file" id="image" accept="image/*" required>
+        <button type="submit">Thêm sản phẩm</button>
+    </form>
+
+
+
+
+</main>
+  <div id="admin-panel">
+    <h1>Quản lý sản phẩm</h1>
+    <div id="product-list" class="products-scroll"></div>
+  </div>
+
+<script>
+// Lấy danh sách sản phẩm từ localStorage hoặc tạo mới
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+// Hiển thị sản phẩm lên giao diện
+function displayProductsForAdmin() {
+  const list = document.getElementById("product-list");
+  list.innerHTML = "";
+  products.forEach((p, index) => {
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML =` 
+      <img src="${p.image}" alt="${p.name}">
+      <div class="product-name">${p.name}</div>
+      <div class="product-price">${p.price.toLocaleString()}đ</div>
+      <div class="product-stock">Tồn kho: ${p.stock}</div>
+      <button onclick="deleteProduct(${index})" class="delete-btn" > 
+        Xóa
+      </button>
+    `;
+    list.appendChild(div);
+  });
+}
+// Xóa sản phẩm có xác nhận
+function deleteProduct(index) {
+  Swal.fire({
+    title: 'Có chắc là xóa chưa',
+    text: "Xóa là mất sản phẩm luôn, là không còn sản phẩm nữa!!!!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Clear', 
+    cancelButtonText: 'Từ để nghĩ lại'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      products.splice(index, 1); // Xóa sản phẩm khỏi mảng
+      localStorage.setItem("products", JSON.stringify(products)); // Cập nhật lại localStorage
+      displayProductsForAdmin(); // Hiển thị lại danh sách sản phẩm
+      Swal.fire('Đã xóa!', 'Sản phẩm đã bị xóa.', 'success'); 
+    }
+  });
+}
+
+// Xử lý thêm sản phẩm (đọc ảnh file dưới dạng Base64 và lưu luôn)
+document.getElementById("add-product-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const price = parseInt(document.getElementById("price").value);
+  const stock = parseInt(document.getElementById("stock").value);
+  const imageInput = document.getElementById("image");
+  const file = imageInput.files[0];
+
+  if (!file) {
+    alert("Vui lòng chọn ảnh sản phẩm");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    products.push({
+      name,
+      price,
+      stock,
+      image: event.target.result  // Lưu ảnh Base64
+    });
+    localStorage.setItem("products", JSON.stringify(products));
+    alert("Thêm sản phẩm thành công!");
+    e.target.reset();
+    displayProductsForAdmin();
+  };
+
+  reader.readAsDataURL(file);
+});
+
+// Hiển thị sản phẩm khi tải trang
+document.addEventListener("DOMContentLoaded", displayProductsForAdmin);
+
+</script>
+
+<script src="admin.js"></script>
+</body>
+</html>

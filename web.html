@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VTshop</title>
+    <link rel="stylesheet" href="web.css">
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Header -->
+        <div id="header">
+            <a href="web.html" class="logo">
+                <img src="imagelogo/logo.png" alt="Logo" width="100">
+            </a>
+            <div id="menu">
+                <div class="item"><a href="cart.html">Giỏ hàng</a></div>
+                <div class="item"><a href="pay.html">Thanh toán</a></div>
+                <div class="item"><a href="login.html" onclick="logout()" class="logout-btn">Đăng xuất</a></div>
+            </div>
+            <div id="actions">
+                <div class="item">
+                    <a href="#">
+                        <img src="imageitem/user.png" alt="User" width="50">
+                    </a>
+                </div>
+                <div class="item">
+                    <a href="cart.html">
+                        <img src="imageitem/shopping.png" alt="Cart" width="50">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banner -->
+        <div id="banner">
+            <div class="box-left">
+                <h2>
+                    <span>Mừng bạn đến VTShop</span><br>
+                    <span>Shop chuyên vợt cầu lông</span>
+                </h2>
+                <p>Chúng tôi luôn cung cấp những cây vợt YONEX chính hãng và chất lượng nhất.</p>
+                <button><a href="cart.html">ĐẶT HÀNG NGAY</a></button>
+            </div>
+            <div class="box-right">
+                <img src="imagelogo/img-1.jpg" alt="img1" width="211" height="230">
+                <img src="imagelogo/img-2.jpg" alt="img2" width="211" height="230">
+                <img src="imagelogo/img-3.jpg" alt="img3" width="211" height="230">
+                <br>
+                <img src="imagelogo/img-4.jpg" alt="img4" width="211" height="230">
+                <img src="imagelogo/img-5.jpg" alt="img5" width="211" height="230">
+                <img src="imagelogo/img-6.jpg" alt="img6" width="211" height="230">
+            </div>
+            <div class="to-bottom">
+                <a href="#">
+                    <img src="imageitem/bottom.png" alt="Scroll Down" width="50">
+                </a>
+            </div>
+        </div>
+
+        <!-- Product -->
+        <main>
+            <h1>Sản phẩm</h1>
+            <div class="product-container">
+                <button id="scroll-left" class="scroll-btn">&#10094;</button>
+                <div id="product-list" class="products-scroll">
+                    <!-- Sản phẩm sẽ được thêm bằng JS -->
+                </div>
+                <button id="scroll-right" class="scroll-btn">&#10095;</button>
+            </div>
+        </main>
+
+        <!-- Sale off -->
+        <div id="saleoff">
+            <div class="box-left">
+                <h1>
+                    <span>GIẢM GIÁ LÊN ĐẾN</span>
+                    <span>30%</span>
+                </h1>
+            </div>
+            <div class="box-right"></div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 VTshop. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

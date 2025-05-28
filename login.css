@@ -1,0 +1,82 @@
+body {
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); /* chuyển đổi màu nền sang gradient xanh */
+  font-family: 'Segoe UI', Arial, sans-serif; /* sử dụng font chữ hiện đại */
+  margin: 0; /* loại bỏ margin mặc định */
+  min-height: 100vh; /* đảm bảo chiều cao tối thiểu của body */
+}
+
+header {
+  background: #252257; 
+  color: #fff; 
+  padding: 24px 0 16px 0; /* padding trên và dưới */
+  text-align: center; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+main {
+  max-width: 400px; /* giới hạn chiều rộng của khung chính */
+  margin: 60px auto; /* căn giữa khung chính */
+  background: #fff; /* màu nền trắng cho khung chính */
+  border-radius: 16px; /* bo tròn góc khung chính */
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08); /* bóng đổ nhẹ cho khung chính */
+  padding: 32px 24px; /* padding bên trong khung chính */
+} 
+
+h1 {
+  color: #ffffff;  /* dùng để làm nổi bật tiêu đề */
+  margin-bottom: 24px; /* khoảng cách dưới tiêu đề */
+  text-align: center; /* căn giữa tiêu đề */
+}
+
+.login-form { 
+  display: flex;  /* sử dụng flexbox để căn chỉnh các phần tử bên trong */
+  flex-direction: column; /* sắp xếp các phần tử theo cột */
+  gap: 18px; /* khoảng cách giữa các phần tử */
+}
+
+.login-form input { 
+  padding: 12px; /* padding bên trong ô input */
+  border-radius: 6px; /* bo tròn góc ô input */
+  border: 1px solid #8db9ff; /* viền ô input */
+  font-size: 16px; /* kích thước chữ trong ô input */
+}
+
+/* Đổi màu placeholder */
+.login-form input::placeholder {
+  color: #252257;
+  opacity: 1;
+}
+
+.login-form button {
+  background: #252257; /* màu nền nút đăng nhập */
+  color: #fff; /* màu chữ nút đăng nhập */
+  border: none; /* không có viền */
+  border-radius: 8px; /* bo tròn góc nút đăng nhập */
+  padding: 12px; /* padding bên trong nút đăng nhập */
+  font-size: 17px;  /* kích thước chữ trong nút đăng nhập */
+  font-weight: bold; /* chữ đậm trong nút đăng nhập */
+  cursor: pointer;  /* con trỏ chuột khi hover vào nút đăng nhập */
+  transition: background 0.2s; /* hiệu ứng chuyển đổi màu nền khi hover */
+}
+.login-form button:hover {
+  background: #8db9ff;
+  color: #252257;
+}
+
+.login-form .link {
+  text-align: right;
+  margin-top: 8px;
+}
+.login-form .link a {
+  color: #8db9ff; /* màu chữ liên kết */
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+.login-form .link a:hover {
+  color: #252257;
+}
+
+@media (max-width: 500px) {
+  main { max-width: 98vw; padding: 10px;}
+}

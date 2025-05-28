@@ -1,0 +1,27 @@
+[
+  {
+    "username": "nguyennhattien",
+    "password": "24012006",
+    "role": "admin"
+  },
+  {
+    "username": "nguoidung1",
+    "password": "1111",
+    "role": "user"
+  },
+    {
+    "username": "nguoidung2",
+    "password": "2222",
+    "role": "user"
+  },
+    {
+    "username": "nguoidung3",
+    "password": "3333",
+    "role": "user"
+  },
+    {
+    "username": "nguoidung4",
+    "password": "4444",
+    "role": "user"
+  }
+] 

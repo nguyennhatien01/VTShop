@@ -1,0 +1,179 @@
+body {
+  background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+header {
+  background: #252257;
+  color: #fff;
+  padding: 24px 0 16px 0;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.0ss8);
+}
+
+nav {
+  margin-top: 10px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+nav a:hover {
+  color: #ff0000;
+}
+
+main {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+
+.order-summary {
+  background: #f7f7fa;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px #146eff;
+}
+
+.order-summary h2 {
+  color: #252257;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px #252257;
+  padding: 16px;
+  gap: 18px;
+  position: relative;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #f7f7fa;
+  border: 1px solid #eee;
+}
+
+.cart-info {
+  flex: 1; /* Chiếm không gian còn lại */
+}
+
+.cart-info .product-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #252257;
+  margin-bottom: 4px;
+}
+.cart-info .product-price {
+  color: #146eff;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+.cart-info .product-qty {
+  color: #ff0000;
+  font-size: 15px;
+}
+
+.cart-summary {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #252257;
+  gap: 10px;
+}
+.remove-btn, .delete-btn {
+  background: #252257;      /* Màu đỏ */
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: 10px;
+}
+.remove-btn:hover, .delete-btn:hover {
+  background: #8db9ff;      /* Đỏ đậm khi hover */
+  color: #252257;
+}
+.checkout-btn { /* Nút thanh toán */
+  background: #252257;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: block;
+  margin: 0 auto;
+}
+.checkout-btn:hover {
+  background: #a1c4fd;
+  color: #252257;
+}
+
+@media (max-width: 700px) {
+  main { max-width: 98vw; padding: 10px;}
+  .cart-item { flex-direction: column; align-items: flex-start;}
+  .cart-item img { margin-bottom: 10px;}
+}   
+
+/* Thêm vào cuối file d:\MayChu\pay.css */
+.shipping-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #146eff;
+  padding: 24px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.shipping-form h3 {
+  margin-top: 0;
+  color: #252257;
+}
+.shipping-form input,
+.shipping-form select { /* Ô nhập liệu và chọn */
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #a1c4fd; 
+  font-size: 16px;
+}
+.shipping-form input,
+.shipping-form select {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #a1c4fd;
+  font-size: 16px;
+  color: #252257; /* Màu chữ trong ô input */
+}

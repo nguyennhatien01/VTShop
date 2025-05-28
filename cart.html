@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ hàng của bạn</title>
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+  <header>
+    <h1>Giỏ hàng</h1>
+    <nav>
+      <a href="web.html">Trang chủ</a>
+    </nav>
+  </header>
+  <main>
+    <section class="cart-section">
+      <h2>Sản phẩm trong giỏ</h2>
+      <div id="cart" class="cart-list">
+        <!-- Sản phẩm trong giỏ sẽ được thêm bằng JS -->
+      </div>
+      <div class="cart-summary">
+        <span id="cart-total-label">Tổng cộng:</span>
+        <span id="cart-total">0 VND</span>
+      </div>
+      <button onclick="goToPay()" class="checkout-btn">Đi thanh toán</button>
+    </section>
+  </main>
+  <script src="main.js"></script>
+</body>
+<script>
+  function goToPay() {
+    window.location.href = "pay.html";
+  }
+</script>
+</html>
