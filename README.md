@@ -1,4 +1,3 @@
-# VTShop
 VTShop/
 │
 ├── index.html               # (alias cho web.html - trang chính)
